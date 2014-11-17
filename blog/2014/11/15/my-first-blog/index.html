@@ -5,12 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>My Life for Codes.</title>
+  <title>Introduction to CRF - My Life for Codes.</title>
   <meta name="author" content="Haipeng Liu">
 
   
-  <meta name="description" content="Haipeng Liu's tech blog">
-  <meta name="keywords" content="C/C++, Python, NLP, Speech Recognition">
+  <meta name="description" content="description: &ldquo;Introduction to Conditional Random Filter&rdquo;
+keywords: CRF Sequential labelling problem Conditional random field is proposed &hellip;">
+  
 
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
@@ -18,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://haipengliu.github.io">
+  <link rel="canonical" href="http://haipengliu.github.io/blog/2014/11/15/my-first-blog">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="My Life for Codes." type="application/atom+xml">
@@ -96,15 +97,12 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2014/11/15/my-first-blog/">Introduction to CRF</a></h1>
+      <h1 class="entry-title">Introduction to CRF</h1>
     
     
       <p class="meta">
@@ -120,7 +118,7 @@
   </header>
 
 
-  <div class="entry-content"><p>description: &ldquo;Introduction to Conditional Random Filter&rdquo;
+<div class="entry-content"><p>description: &ldquo;Introduction to Conditional Random Filter&rdquo;
 keywords: CRF</p>
 
 <h1>Sequential labelling problem</h1>
@@ -149,18 +147,56 @@ $P(x|z)$, where $x = (x_1, x_2, &hellip;, x_T)$ the labels, $z$ the data, $t\in[
  $Z(z)$ is the normalization constant known as the partition function, which guarantees the formula return a value in the range from zero to one. It’s the sum of the potentials but accounting for all the possible x values, which can be treated as the edge probabilities along side the $x$. </br>
  The number of potentials is denoted by $c$. Here in undirected Markov chain, $c$ stands for clique, which means different connections among nodes. In CRF, generally there are two kinds of connections, one is the current node connecting observation nodes, another is the nearby two nodes connecting observations nodes. They are corresponded to two kinds of potentials – <strong>node potential</strong> and <strong>edge potential</strong>.</p>
 </div>
-  
-  
 
 
-    </article>
+  <footer>
+    <p class="meta">
+      
   
-  <div class="pagination">
+
+<span class="byline author vcard">Posted by <span class="fn">Haipeng Liu</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2014-11-15T08:55:38+08:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>15</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>8:55 am</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/crf/'>crf</a>, <a class='category' href='/blog/categories/machine-learning/'>machine learning</a>
+  
+</span>
+
+
+    </p>
     
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://haipengliu.github.io/blog/2014/11/15/my-first-blog/" data-via="" data-counturl="http://haipengliu.github.io/blog/2014/11/15/my-first-blog/" >Tweet</a>
+  
+  
+  
 </div>
+
+    
+    <p class="meta">
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
 <aside class="sidebar">
   
     <section>
@@ -189,6 +225,7 @@ $P(x|z)$, where $x = (x_1, x_2, &hellip;, x_T)$ the labels, $z$ the data, $t\in[
   
 </aside>
 
+
     </div>
   </div>
   <footer role="contentinfo"><p>
@@ -203,7 +240,10 @@ $P(x|z)$, where $x = (x_1, x_2, &hellip;, x_T)$ the labels, $z$ the data, $t\in[
       var disqus_shortname = 'haipengliu';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://haipengliu.github.io/blog/2014/11/15/my-first-blog/';
+        var disqus_url = 'http://haipengliu.github.io/blog/2014/11/15/my-first-blog/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
