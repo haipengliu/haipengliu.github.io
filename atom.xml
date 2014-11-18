@@ -4,7 +4,7 @@
   <title><![CDATA[Into Data]]></title>
   <link href="http://haipengliu.github.io/atom.xml" rel="self"/>
   <link href="http://haipengliu.github.io/"/>
-  <updated>2014-11-18T16:34:05+08:00</updated>
+  <updated>2014-11-18T17:29:36+08:00</updated>
   <id>http://haipengliu.github.io/</id>
   <author>
     <name><![CDATA[Haipeng Liu]]></name>
@@ -14,7 +14,27 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Introduction to CRF]]></title>
+    <title type="html"><![CDATA[Introduction to CRF(2)]]></title>
+    <link href="http://haipengliu.github.io/blog/2014/11/18/introduction-to-crf-2/"/>
+    <updated>2014-11-18T17:27:47+08:00</updated>
+    <id>http://haipengliu.github.io/blog/2014/11/18/introduction-to-crf-2</id>
+    <content type="html"><![CDATA[<p>Author: Haipeng Liu <A href="mailto:pliu1981@gmail.com">email to me</A></br>
+keywords: CRF</br></p>
+
+<h1>Feature Engineering</h1>
+
+<p>Features are perhaps the most important elements of the statistic model. Good feature engineering can often increase the labelling accuracy very significantly.</p>
+
+<p>A feature function associates the labels and the local data patterns. The node feature take into account the current label $x_t$ and an element of data pattern $g_m[z, t]$. where $\delta[x_t, s]$ is the indicator function. It returns 1 if label of $x$ at $t$ is the label $s$ and 0 otherwise.</p>
+
+<p>The data pattern function $g_m(z, t)$ takes care of the raw data and returns a (real or binary) value. For example, in noun-phrase chunking, we may have a feature $g$ the 100th.  That is, the 100th data feature receives value of 1 at current time $t$ of $10$ if the previous word is <em>today</em>.</p>
+
+<p>&lt;&ndash;! more &ndash;></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Introduction to CRF(1)]]></title>
     <link href="http://haipengliu.github.io/blog/2014/11/15/my-first-blog/"/>
     <updated>2014-11-15T08:55:38+08:00</updated>
     <id>http://haipengliu.github.io/blog/2014/11/15/my-first-blog</id>
@@ -55,11 +75,16 @@ node potential of label $x_t$ at time $t$</p></blockquote>
 
 <p>$$\begin{equation}\phi_t(x_t, z) = exp(\sum_k\omega_kf_k(x_t, z, t))\dots\end{equation}~Eq.(1)\dots~a~S\times{}T~matrix$$</p>
 
+<blockquote><p>edge potential of two nearby labels at time $t$ and $t+1$</p></blockquote>
+
+<p>$$\begin{equation}\varphi_t(x_t, x_t+1, z) = exp(\sum_k\omega_kf_k(x_t, x_t+1, z_t))\dots\end{equation}~Eq.(2)\dots~a~S\times{}S\times{}T~matrix$$</p>
+
 <p>The concept of potentials can be imagined as energies. Those local, nearby pieces of energies are used to compose the probability. The potentials refer to some quantities that tie the labels and the local data patterns at particular time together. In the simplest case which is often used in practice, potentials are exponential of sum of weighted features. There are usually two types of potential functions: node potential functions and edge potential functions, according to different clique styles they are connected.</p>
 
-<h2>Node Potential</h2>
+<p>The node potential $\phi$ describes the contribution of the current node and its connecting observations to the global model. The edge potential $\varphi_t$ describes the contribution of two nearby labels and their connecting observations to the global model. The connecting styles between nodes and observations are modeled by feature functions. Where $f_k$ is called the feature function, $\omega_k$ is the weight for a feature and $k$ is the number of features. Feature functions connect the labels and the observed data. There may be S labels and T observations. So each potential function is a multi-dimensionl matrix.</p>
 
-<p>The node potential phi describes the contribution of the current node and its connecting observations to the global model. The edge potential psi describes the contribution of two nearby labels and their connecting observations to the global model. The connections is modeled by feature functions. Where f is called a feature function, omega is the weight for a feature and K is the number of features. Feature functions connect the labels and the observed data. There may be S labels and T observations.</p>
+<p>The node potential can be represented by a $S\times{}T$ matrix ($S$ stands for the number of labels and $T$ stands for the number of input items. The edge potential can be implemented as an $S\times{}S\times{}T$ matrix.
+Since we have two type of potentials, then we can get two type of features.</p>
 ]]></content>
   </entry>
   

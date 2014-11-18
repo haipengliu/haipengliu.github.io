@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Introduction to CRF - Into Data</title>
+  <title>Introduction to CRF(1) - Into Data</title>
   <meta name="author" content="Haipeng Liu">
 
   
@@ -102,7 +102,7 @@ keywords: CRF Sequential labelling problem Conditional random field is proposed 
   
   <header>
     
-      <h1 class="entry-title">Introduction to CRF</h1>
+      <h1 class="entry-title">Introduction to CRF(1)</h1>
     
     
       <p class="meta">
@@ -155,11 +155,16 @@ node potential of label $x_t$ at time $t$</p></blockquote>
 
 <p>$$\begin{equation}\phi_t(x_t, z) = exp(\sum_k\omega_kf_k(x_t, z, t))\dots\end{equation}~Eq.(1)\dots~a~S\times{}T~matrix$$</p>
 
+<blockquote><p>edge potential of two nearby labels at time $t$ and $t+1$</p></blockquote>
+
+<p>$$\begin{equation}\varphi_t(x_t, x_t+1, z) = exp(\sum_k\omega_kf_k(x_t, x_t+1, z_t))\dots\end{equation}~Eq.(2)\dots~a~S\times{}S\times{}T~matrix$$</p>
+
 <p>The concept of potentials can be imagined as energies. Those local, nearby pieces of energies are used to compose the probability. The potentials refer to some quantities that tie the labels and the local data patterns at particular time together. In the simplest case which is often used in practice, potentials are exponential of sum of weighted features. There are usually two types of potential functions: node potential functions and edge potential functions, according to different clique styles they are connected.</p>
 
-<h2>Node Potential</h2>
+<p>The node potential $\phi$ describes the contribution of the current node and its connecting observations to the global model. The edge potential $\varphi_t$ describes the contribution of two nearby labels and their connecting observations to the global model. The connecting styles between nodes and observations are modeled by feature functions. Where $f_k$ is called the feature function, $\omega_k$ is the weight for a feature and $k$ is the number of features. Feature functions connect the labels and the observed data. There may be S labels and T observations. So each potential function is a multi-dimensionl matrix.</p>
 
-<p>The node potential phi describes the contribution of the current node and its connecting observations to the global model. The edge potential psi describes the contribution of two nearby labels and their connecting observations to the global model. The connections is modeled by feature functions. Where f is called a feature function, omega is the weight for a feature and K is the number of features. Feature functions connect the labels and the observed data. There may be S labels and T observations.</p>
+<p>The node potential can be represented by a $S\times{}T$ matrix ($S$ stands for the number of labels and $T$ stands for the number of input items. The edge potential can be implemented as an $S\times{}S\times{}T$ matrix.
+Since we have two type of potentials, then we can get two type of features.</p>
 </div>
 
 
@@ -199,6 +204,8 @@ node potential of label $x_t$ at time $t$</p></blockquote>
     <p class="meta">
       
       
+        <a class="basic-alignment right" href="/blog/2014/11/18/introduction-to-crf-2/" title="Next Post: Introduction to CRF(2)">Introduction to CRF(2) &raquo;</a>
+      
     </p>
   </footer>
 </article>
@@ -218,7 +225,11 @@ node potential of label $x_t$ at time $t$</p></blockquote>
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2014/11/15/my-first-blog/">Introduction to CRF</a>
+        <a href="/blog/2014/11/18/introduction-to-crf-2/">Introduction to CRF(2)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/11/15/my-first-blog/">Introduction to CRF(1)</a>
       </li>
     
   </ul>
@@ -230,8 +241,8 @@ node potential of label $x_t$ at time $t$</p></blockquote>
 <section> 
   <h1>Categories</h1> 
   <ul id="categories"> 
-    <li class='category'><a href='/blog/categories/crf/'>crf (1)</a></li>
-<li class='category'><a href='/blog/categories/machine-learning/'>machine learning (1)</a></li>
+    <li class='category'><a href='/blog/categories/crf/'>crf (2)</a></li>
+<li class='category'><a href='/blog/categories/machine-learning/'>machine learning (2)</a></li>
  
   </ul> 
 </section>
