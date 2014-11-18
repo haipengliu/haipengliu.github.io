@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Introduction to CRF"
+title: "Introduction to CRF(1)"
 date: 2014-11-15 08:55:38 +0800
 comments: true
 categories: [CRF, Machine Learning]
@@ -40,7 +40,15 @@ node potential of label $x_t$ at time $t$
 
 $$\begin{equation}\phi_t(x_t, z) = exp(\sum_k\omega_kf_k(x_t, z, t))\dots\end{equation}~Eq.(1)\dots~a~S\times{}T~matrix$$
 
+>edge potential of two nearby labels at time $t$ and $t+1$
+
+$$\begin{equation}\varphi_t(x_t, x_t+1, z) = exp(\sum_k\omega_kf_k(x_t, x_t+1, z_t))\dots\end{equation}~Eq.(2)\dots~a~S\times{}S\times{}T~matrix$$
+
 The concept of potentials can be imagined as energies. Those local, nearby pieces of energies are used to compose the probability. The potentials refer to some quantities that tie the labels and the local data patterns at particular time together. In the simplest case which is often used in practice, potentials are exponential of sum of weighted features. There are usually two types of potential functions: node potential functions and edge potential functions, according to different clique styles they are connected. 
 
-##Node Potential
-The node potential phi describes the contribution of the current node and its connecting observations to the global model. The edge potential psi describes the contribution of two nearby labels and their connecting observations to the global model. The connections is modeled by feature functions. Where f is called a feature function, omega is the weight for a feature and K is the number of features. Feature functions connect the labels and the observed data. There may be S labels and T observations.
+The node potential $\phi$ describes the contribution of the current node and its connecting observations to the global model. The edge potential $\varphi_t$ describes the contribution of two nearby labels and their connecting observations to the global model. The connecting styles between nodes and observations are modeled by feature functions. Where $f_k$ is called the feature function, $\omega_k$ is the weight for a feature and $k$ is the number of features. Feature functions connect the labels and the observed data. There may be S labels and T observations. So each potential function is a multi-dimensionl matrix.
+
+The node potential can be represented by a $S\times{}T$ matrix ($S$ stands for the number of labels and $T$ stands for the number of input items. The edge potential can be implemented as an $S\times{}S\times{}T$ matrix. 
+Since we have two type of potentials, then we can get two type of features. 
+
+
