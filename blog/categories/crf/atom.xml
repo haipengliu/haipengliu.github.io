@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Crf | My Life for Codes.]]></title>
   <link href="http://haipengliu.github.io/blog/categories/crf/atom.xml" rel="self"/>
   <link href="http://haipengliu.github.io/"/>
-  <updated>2014-11-17T18:26:09+08:00</updated>
+  <updated>2014-11-18T15:03:23+08:00</updated>
   <id>http://haipengliu.github.io/</id>
   <author>
     <name><![CDATA[Haipeng Liu]]></name>
@@ -18,8 +18,8 @@
     <link href="http://haipengliu.github.io/blog/2014/11/15/my-first-blog/"/>
     <updated>2014-11-15T08:55:38+08:00</updated>
     <id>http://haipengliu.github.io/blog/2014/11/15/my-first-blog</id>
-    <content type="html"><![CDATA[<p>description: &ldquo;Introduction to Conditional Random Filter&rdquo;
-keywords: CRF</p>
+    <content type="html"><![CDATA[<p>Author: Haipeng Liu <A href="mailto:pliu1981@gmail.com">email to me</A></br>
+keywords: CRF</br></p>
 
 <h1>Sequential labelling problem</h1>
 
@@ -35,17 +35,31 @@ For example, in Noun-Phrase (NP) chunking task, for a sentence, we want to provi
 <h1>Model the sequence</h1>
 
 <p>To model the labeling process. We use $x$ to denote the labels and $z$ to denote the data. In our case $x$ is the sequence of noun phrase labels and $z$ is the sequence of words. $t$ is the sequence index. Also, $x$ is named hidden state variables, $z$ is named the observations. The task of CRF is to predict the state variables given the observations. That is to compute the probability:
+   <!-- more --> <br/>
 $P(x|z)$, where $x = (x_1, x_2, &hellip;, x_T)$ the labels, $z$ the data, $t\in[1, T]$ sequence index.</p>
 
 <h1>Potential functions</h1>
 
 <p>With the theory of undirected Markov chain, the conditional probability of $x$ given $z$ is defined as the product of a serial potential functions. Where:</br></p>
 
-<p>$$P(x|z) = \frac{1}{Z(z)}\sum_{c}\psi_c(x_c, z)$$</p>
+<p>$$P(x|z) = \frac{1}{Z(z)}\sum_{c}\psi_c(x_c, z)$$
+$\psi_c(x_c, z)$ - potential function&lt;\br>
+$Z(z) = \sum_x\prod_c\psi_c(x_c, z)$ - partition function&lt;\br></p>
 
 <p> $\psi$ are positive functions known as potentials.</br>
  $Z(z)$ is the normalization constant known as the partition function, which guarantees the formula return a value in the range from zero to one. It’s the sum of the potentials but accounting for all the possible x values, which can be treated as the edge probabilities along side the $x$. </br>
  The number of potentials is denoted by $c$. Here in undirected Markov chain, $c$ stands for clique, which means different connections among nodes. In CRF, generally there are two kinds of connections, one is the current node connecting observation nodes, another is the nearby two nodes connecting observations nodes. They are corresponded to two kinds of potentials – <strong>node potential</strong> and <strong>edge potential</strong>.</p>
+
+<blockquote><p>Two types of potentials</br>
+node potential of label $x_t$ at time $t$</p></blockquote>
+
+<p>$$\begin{equation}\phi_t(x_t, z) = exp(\sum_k\omega_kf_k(x_t, z, t))\dots\end{equation}~Eq.(1)\dots~a~S\times{}T~matrix$$</p>
+
+<p>The concept of potentials can be imagined as energies. Those local, nearby pieces of energies are used to compose the probability. The potentials refer to some quantities that tie the labels and the local data patterns at particular time together. In the simplest case which is often used in practice, potentials are exponential of sum of weighted features. There are usually two types of potential functions: node potential functions and edge potential functions, according to different clique styles they are connected.</p>
+
+<h2>Node Potential</h2>
+
+<p>The node potential phi describes the contribution of the current node and its connecting observations to the global model. The edge potential psi describes the contribution of two nearby labels and their connecting observations to the global model. The connections is modeled by feature functions. Where f is called a feature function, omega is the weight for a feature and K is the number of features. Feature functions connect the labels and the observed data. There may be S labels and T observations.</p>
 ]]></content>
   </entry>
   

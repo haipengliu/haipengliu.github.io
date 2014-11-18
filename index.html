@@ -120,8 +120,8 @@
   </header>
 
 
-  <div class="entry-content"><p>description: &ldquo;Introduction to Conditional Random Filter&rdquo;
-keywords: CRF</p>
+  <div class="entry-content"><p>Author: Haipeng Liu <A href="mailto:pliu1981@gmail.com">email to me</A></br>
+keywords: CRF</br></p>
 
 <h1>Sequential labelling problem</h1>
 
@@ -137,19 +137,12 @@ For example, in Noun-Phrase (NP) chunking task, for a sentence, we want to provi
 <h1>Model the sequence</h1>
 
 <p>To model the labeling process. We use $x$ to denote the labels and $z$ to denote the data. In our case $x$ is the sequence of noun phrase labels and $z$ is the sequence of words. $t$ is the sequence index. Also, $x$ is named hidden state variables, $z$ is named the observations. The task of CRF is to predict the state variables given the observations. That is to compute the probability:
-$P(x|z)$, where $x = (x_1, x_2, &hellip;, x_T)$ the labels, $z$ the data, $t\in[1, T]$ sequence index.</p>
-
-<h1>Potential functions</h1>
-
-<p>With the theory of undirected Markov chain, the conditional probability of $x$ given $z$ is defined as the product of a serial potential functions. Where:</br></p>
-
-<p>$$P(x|z) = \frac{1}{Z(z)}\sum_{c}\psi_c(x_c, z)$$</p>
-
-<p> $\psi$ are positive functions known as potentials.</br>
- $Z(z)$ is the normalization constant known as the partition function, which guarantees the formula return a value in the range from zero to one. It’s the sum of the potentials but accounting for all the possible x values, which can be treated as the edge probabilities along side the $x$. </br>
- The number of potentials is denoted by $c$. Here in undirected Markov chain, $c$ stands for clique, which means different connections among nodes. In CRF, generally there are two kinds of connections, one is the current node connecting observation nodes, another is the nearby two nodes connecting observations nodes. They are corresponded to two kinds of potentials – <strong>node potential</strong> and <strong>edge potential</strong>.</p>
-</div>
+   </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/11/15/my-first-blog/">Read on &rarr;</a>
+    </footer>
   
 
 
