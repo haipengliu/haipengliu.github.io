@@ -5,12 +5,16 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Into Data</title>
+  <title>How to Use Octopress to Write Blog - Into Data</title>
   <meta name="author" content="Haipeng Liu">
 
   
-  <meta name="description" content="Haipeng Liu's tech blog">
-  <meta name="keywords" content="C/C++, Python, NLP, Speech Recognition">
+  <meta name="description" content="Author: Haipeng Liu email to me
+keywords: Octopress Install Octopress 1
+2
+git clone git://github.com/imathis/octopress.git octopress
+cd octopress &hellip;">
+  
 
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
@@ -18,7 +22,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://haipengliu.github.io">
+  <link rel="canonical" href="http://haipengliu.github.io/blog/2014/12/23/how-to-use-octopress-to-write-blog">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Into Data" type="application/atom+xml">
@@ -96,15 +100,12 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2014/12/23/how-to-use-octopress-to-write-blog/">How to Use Octopress to Write Blog</a></h1>
+      <h1 class="entry-title">How to Use Octopress to Write Blog</h1>
     
     
       <p class="meta">
@@ -120,7 +121,7 @@
   </header>
 
 
-  <div class="entry-content"><p>Author: Haipeng Liu <A href="mailto:pliu1981@gmail.com">email to me</A></br>
+<div class="entry-content"><p>Author: Haipeng Liu <A href="mailto:pliu1981@gmail.com">email to me</A></br>
 keywords: Octopress</br></p>
 
 <h1>Install Octopress</h1>
@@ -239,107 +240,58 @@ keywords: Octopress</br></p>
 
 <p>Finished.</p>
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/11/18/introduction-to-crf-2/">Introduction to CRF(2)</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2014-11-18T17:27:47+08:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>18</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>5:27 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Author: Haipeng Liu <A href="mailto:pliu1981@gmail.com">email to me</A></br>
-keywords: CRF</br></p>
-
-<h1>Feature Engineering</h1>
-
-<p>Features are perhaps the most important elements of the statistic model. Good feature engineering can often increase the labelling accuracy very significantly.</p>
-
-<p>A feature function associates the labels and the local data patterns. The node feature take into account the current label $x_t$ and an element of data pattern $g_m[z, t]$. where $\delta[x_t, s]$ is the indicator function. It returns 1 if label of $x$ at $t$ is the label $s$ and 0 otherwise.</p>
-
-<p>The data pattern function $g_m(z, t)$ takes care of the raw data and returns a (real or binary) value. For example, in noun-phrase chunking, we may have a feature $g$ the 100th.  That is, the 100th data feature receives value of 1 at current time $t$ of $10$ if the previous word is <em>today</em>.</p>
-
-<p>&lt;&ndash;! more &ndash;></p>
-</div>
-  
   
 
+<span class="byline author vcard">Posted by <span class="fn">Haipeng Liu</span></span>
 
-    </article>
-  
-  
-    <article>
       
-  <header>
+
+
+
+
+<time class='entry-date' datetime='2014-12-23T20:45:48+08:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>23</span><span class='date-suffix'>rd</span>, <span class='date-year'>2014</span></span> <span class='time'>8:45 pm</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/blog/'>blog</a>, <a class='category' href='/blog/categories/octopress/'>octopress</a>
+  
+</span>
+
+
+    </p>
     
-      <h1 class="entry-title"><a href="/blog/2014/11/15/my-first-blog/">Introduction to CRF(1)</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2014-11-15T08:55:38+08:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>15</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>8:55 am</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Author: Haipeng Liu <A href="mailto:pliu1981@gmail.com">email to me</A></br>
-keywords: CRF</br></p>
-
-<h1>Sequential labelling problem</h1>
-
-<p><strong>Conditional random</strong> field is proposed to model the sequence data. The sequence data are the data or objects with a sequence structure.
-For example, in Noun-Phrase (NP) chunking task, for a sentence, we want to provide correct phrasal labels for each word. The phrasal labels are B-NP for the beginning words of a noun-phrase, I-NP for the words inside a noun-phase and O for others. For instant, a labelled sentence in the CoNLL2000 dataset reads like this.</p>
-
-<blockquote><p>Chancellor/O of/O the/B-NP Exchequer/I-NP Nigel/B-NP Lawson/I-NP &rsquo;s/B-NP restated/I-NP commitment/I-NP to/O a/B-NP firm/I-NP monetary/I-NP policy/I-NP has/O helped/O to/O prevent/O a/B-NP freefall/I-NP in/O sterling/B-NP over/O the/B-NP past/I-NP week/I-NP ./O</p></blockquote>
-
-<p><em>CoNLL2000</em></p>
-
-<p>The CRF can automatically label the noun phrase character as the human does</p>
-
-<h1>Model the sequence</h1>
-
-<p>To model the labeling process. We use $x$ to denote the labels and $z$ to denote the data. In our case $x$ is the sequence of noun phrase labels and $z$ is the sequence of words. $t$ is the sequence index. Also, $x$ is named hidden state variables, $z$ is named the observations. The task of CRF is to predict the state variables given the observations. That is to compute the probability:
-   </div>
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://haipengliu.github.io/blog/2014/12/23/how-to-use-octopress-to-write-blog/" data-via="" data-counturl="http://haipengliu.github.io/blog/2014/12/23/how-to-use-octopress-to-write-blog/" >Tweet</a>
   
   
-    <footer>
-      <a rel="full-article" href="/blog/2014/11/15/my-first-blog/">Read on &rarr;</a>
-    </footer>
   
-
-
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
 </div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/11/18/introduction-to-crf-2/" title="Previous Post: Introduction to CRF(2)">&laquo; Introduction to CRF(2)</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
 <aside class="sidebar">
   
     <section>
@@ -387,6 +339,7 @@ For example, in Noun-Phrase (NP) chunking task, for a sentence, we want to provi
   
 </aside>
 
+
     </div>
   </div>
   <footer role="contentinfo"><p>
@@ -401,7 +354,10 @@ For example, in Noun-Phrase (NP) chunking task, for a sentence, we want to provi
       var disqus_shortname = 'haipengliu';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://haipengliu.github.io/blog/2014/12/23/how-to-use-octopress-to-write-blog/';
+        var disqus_url = 'http://haipengliu.github.io/blog/2014/12/23/how-to-use-octopress-to-write-blog/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

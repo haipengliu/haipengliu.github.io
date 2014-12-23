@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Blog | Into Data]]></title>
+  <link href="http://haipengliu.github.io/blog/categories/blog/atom.xml" rel="self"/>
+  <link href="http://haipengliu.github.io/"/>
+  <updated>2014-12-23T21:14:59+08:00</updated>
+  <id>http://haipengliu.github.io/</id>
+  <author>
+    <name><![CDATA[Haipeng Liu]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[How to Use Octopress to Write Blog]]></title>
+    <link href="http://haipengliu.github.io/blog/2014/12/23/how-to-use-octopress-to-write-blog/"/>
+    <updated>2014-12-23T20:45:48+08:00</updated>
+    <id>http://haipengliu.github.io/blog/2014/12/23/how-to-use-octopress-to-write-blog</id>
+    <content type="html"><![CDATA[<p>Author: Haipeng Liu <A href="mailto:pliu1981@gmail.com">email to me</A></br>
+keywords: Octopress</br></p>
+
+<h1>Install Octopress</h1>
+
+<pre><code class="">git clone git://github.com/imathis/octopress.git octopress
+cd octopress
+</code></pre>
+
+<h2>Installing Ruby With Rbenv</h2>
+
+<h3>Install Rbenv</h3>
+
+<pre><code>cd
+git clone git://github.com/sstephenson/rbenv.git .rbenv
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' &gt;&gt; ~/.bash_profile
+echo 'eval "$(rbenv init -)"' &gt;&gt; ~/.bash_profile
+git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+source ~/.bash_profile
+</code></pre>
+
+<p>&lt;&ndash;! more &ndash;></p>
+
+<h3>Install Ruby 1.9.3</h3>
+
+<pre><code>rbenv install 1.9.3-p0
+rbenv local(/global) 1.9.3-p0 
+rbenv rehash
+</code></pre>
+
+<h3>Install dependencies</h3>
+
+<pre><code>gem install bundler
+rbenv rehash    # If you use rbenv, rehash to be able to run the bundle command
+bundle install
+</code></pre>
+
+<h3>Install the default Octopress theme.</h3>
+
+<pre><code>rake install
+</code></pre>
+
+<h1>Write A Blog</h1>
+
+<pre><code>rake new_post['&lt;your_post_title&gt;']
+</code></pre>
+
+<p>In your octopress path <strong>octopress/source/_posts</strong>, open the post just created and edit as fowllows:</p>
+
+<pre><code>---
+layout: post
+title: "&lt;your_title&gt;"
+date: 2014-11-15 08:55:38 +0800
+comments: true
+categories: [&lt;tag_1&gt;, &lt;tag_2&gt;]
+---
+Author: 
+keywords: 
+</code></pre>
+
+<h1>Deploy Your Blog</h1>
+
+<h2>Preview</h2>
+
+<pre><code>rake install
+rake generate
+rake preview
+</code></pre>
+
+<p>Now you can see your blog preview at <localhost>:4000</p>
+
+<h2>Publish</h2>
+
+<pre><code>rake deploy
+</code></pre>
+
+<h1>Back Up your Blogsite onto Github</h1>
+
+<pre><code>git add .
+git commit -m “your message”
+git push origin source
+</code></pre>
+
+<p>Finished.</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -4,7 +4,7 @@
   <title><![CDATA[Into Data]]></title>
   <link href="http://haipengliu.github.io/atom.xml" rel="self"/>
   <link href="http://haipengliu.github.io/"/>
-  <updated>2014-11-18T18:25:01+08:00</updated>
+  <updated>2014-12-23T21:14:59+08:00</updated>
   <id>http://haipengliu.github.io/</id>
   <author>
     <name><![CDATA[Haipeng Liu]]></name>
@@ -12,6 +12,132 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[How to Use Octopress to Write Blog]]></title>
+    <link href="http://haipengliu.github.io/blog/2014/12/23/how-to-use-octopress-to-write-blog/"/>
+    <updated>2014-12-23T20:45:48+08:00</updated>
+    <id>http://haipengliu.github.io/blog/2014/12/23/how-to-use-octopress-to-write-blog</id>
+    <content type="html"><![CDATA[<p>Author: Haipeng Liu <A href="mailto:pliu1981@gmail.com">email to me</A></br>
+keywords: Octopress</br></p>
+
+<h1>Install Octopress</h1>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git://github.com/imathis/octopress.git octopress
+</span><span class='line'>cd octopress
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Installing Ruby With Rbenv</h2>
+
+<h3>Install Rbenv</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cd
+</span><span class='line'>git clone git://github.com/sstephenson/rbenv.git .rbenv
+</span><span class='line'>echo 'export PATH="$HOME/.rbenv/bin:$PATH"' &gt;&gt; ~/.bash_profile
+</span><span class='line'>echo 'eval "$(rbenv init -)"' &gt;&gt; ~/.bash_profile
+</span><span class='line'>git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+</span><span class='line'>source ~/.bash_profile</span></code></pre></td></tr></table></div></figure>
+
+
+<p>&lt;&ndash;! more &ndash;></p>
+
+<h3>Install Ruby 1.9.3</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rbenv install 1.9.3-p0
+</span><span class='line'>rbenv local(/global) 1.9.3-p0 
+</span><span class='line'>rbenv rehash</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Install dependencies</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gem install bundler
+</span><span class='line'>rbenv rehash    # If you use rbenv, rehash to be able to run the bundle command
+</span><span class='line'>bundle install</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Install the default Octopress theme.</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake install</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>Write A Blog</h1>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake new_post['&lt;your_post_title&gt;']</span></code></pre></td></tr></table></div></figure>
+
+
+<p>In your octopress path <strong>octopress/source/_posts</strong>, open the post just created and edit as fowllows:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>---
+</span><span class='line'>layout: post
+</span><span class='line'>title: "&lt;your_title&gt;"
+</span><span class='line'>date: 2014-11-15 08:55:38 +0800
+</span><span class='line'>comments: true
+</span><span class='line'>categories: [&lt;tag_1&gt;, &lt;tag_2&gt;]
+</span><span class='line'>---
+</span><span class='line'>Author: 
+</span><span class='line'>keywords: 
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>Deploy Your Blog</h1>
+
+<h2>Preview</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake install
+</span><span class='line'>rake generate
+</span><span class='line'>rake preview</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now you can see your blog preview at <localhost>:4000</p>
+
+<h2>Publish</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake deploy</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>Back Up your Blogsite onto Github</h1>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git add .
+</span><span class='line'>git commit -m “your message”
+</span><span class='line'>git push origin source</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Finished.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Introduction to CRF(2)]]></title>
