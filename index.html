@@ -104,7 +104,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2014/12/23/how-to-use-octopress-to-write-blog/">How to Use Octopress to Write Blog</a></h1>
+      <h1 class="entry-title"><a href="/blog/2014/12/23/how-to-use-octopress-to-write-blog/">How to Use Octopress to Write Blog on Github</a></h1>
     
     
       <p class="meta">
@@ -150,96 +150,12 @@ keywords: Octopress</br></p>
 </span><span class='line'>source ~/.bash_profile</span></code></pre></td></tr></table></div></figure>
 
 
-<p>&lt;&ndash;! more &ndash;></p>
-
-<h3>Install Ruby 1.9.3</h3>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rbenv install 1.9.3-p0
-</span><span class='line'>rbenv local(/global) 1.9.3-p0 
-</span><span class='line'>rbenv rehash</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Install dependencies</h3>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>gem install bundler
-</span><span class='line'>rbenv rehash    # If you use rbenv, rehash to be able to run the bundle command
-</span><span class='line'>bundle install</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Install the default Octopress theme.</h3>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake install</span></code></pre></td></tr></table></div></figure>
-
-
-<h1>Write A Blog</h1>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake new_post['&lt;your_post_title&gt;']</span></code></pre></td></tr></table></div></figure>
-
-
-<p>In your octopress path <strong>octopress/source/_posts</strong>, open the post just created and edit as fowllows:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>---
-</span><span class='line'>layout: post
-</span><span class='line'>title: "&lt;your_title&gt;"
-</span><span class='line'>date: 2014-11-15 08:55:38 +0800
-</span><span class='line'>comments: true
-</span><span class='line'>categories: [&lt;tag_1&gt;, &lt;tag_2&gt;]
-</span><span class='line'>---
-</span><span class='line'>Author: 
-</span><span class='line'>keywords: 
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h1>Deploy Your Blog</h1>
-
-<h2>Preview</h2>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake install
-</span><span class='line'>rake generate
-</span><span class='line'>rake preview</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Now you can see your blog preview at <localhost>:4000</p>
-
-<h2>Publish</h2>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake deploy</span></code></pre></td></tr></table></div></figure>
-
-
-<h1>Back Up your Blogsite onto Github</h1>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git add .
-</span><span class='line'>git commit -m “your message”
-</span><span class='line'>git push origin source</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Finished.</p>
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/12/23/how-to-use-octopress-to-write-blog/">Read on &rarr;</a>
+    </footer>
   
 
 
@@ -356,7 +272,7 @@ For example, in Noun-Phrase (NP) chunking task, for a sentence, we want to provi
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2014/12/23/how-to-use-octopress-to-write-blog/">How to Use Octopress to Write Blog</a>
+        <a href="/blog/2014/12/23/how-to-use-octopress-to-write-blog/">How to Use Octopress to Write Blog on Github</a>
       </li>
     
       <li class="post">

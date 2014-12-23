@@ -4,7 +4,7 @@
   <title><![CDATA[Into Data]]></title>
   <link href="http://haipengliu.github.io/atom.xml" rel="self"/>
   <link href="http://haipengliu.github.io/"/>
-  <updated>2014-12-23T21:14:59+08:00</updated>
+  <updated>2014-12-23T21:18:24+08:00</updated>
   <id>http://haipengliu.github.io/</id>
   <author>
     <name><![CDATA[Haipeng Liu]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[How to Use Octopress to Write Blog]]></title>
+    <title type="html"><![CDATA[How to Use Octopress to Write Blog on Github]]></title>
     <link href="http://haipengliu.github.io/blog/2014/12/23/how-to-use-octopress-to-write-blog/"/>
     <updated>2014-12-23T20:45:48+08:00</updated>
     <id>http://haipengliu.github.io/blog/2014/12/23/how-to-use-octopress-to-write-blog</id>
@@ -48,7 +48,8 @@ keywords: Octopress</br></p>
 </span><span class='line'>source ~/.bash_profile</span></code></pre></td></tr></table></div></figure>
 
 
-<p>&lt;&ndash;! more &ndash;></p>
+<!-- more -->
+
 
 <h3>Install Ruby 1.9.3</h3>
 
