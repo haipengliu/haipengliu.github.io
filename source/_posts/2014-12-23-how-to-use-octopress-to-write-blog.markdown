@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "How to Use Octopress to write blog"
+title: "How to Use Octopress to write blog on Github"
 date: 2014-12-23 20:45:48 +0800
 comments: true
 categories: [Octopress, Blog]
@@ -27,7 +27,7 @@ echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
 git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 source ~/.bash_profile
 ```
-<--! more -->
+<!-- more -->
 
 ### Install Ruby 1.9.3
 ```
