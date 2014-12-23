@@ -11,3 +11,5 @@ Hi, my name is Haipeng Liu.</br>
 I am currently working in Beijing China.</br>
 My major research area is Natural Language Processing and Machine Learning.
 I love coding and I'd like to share my thoughts and ideas with you.
+
+Contact me at pliu1981 # gmail.com
